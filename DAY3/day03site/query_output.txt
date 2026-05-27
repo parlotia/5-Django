@@ -1,0 +1,12 @@
+Devicedb:
+Devicedb( 设备名称: R1 | 设备类型: Router | IP地址: 10.10.1.101 )
+Devicedb( 设备名称: R2 | 设备类型: Router | IP地址: 10.10.1.102 )
+
+DeviceSNMP:
+DeviceSNMP( 设备类型: Router | SNMP类型: CPU利用率 | OID: 1.3.6.1.4.1.9.2.1.58.0 )
+DeviceSNMP( 设备类型: Router | SNMP类型: 内存利用率 | OID: 1.3.6.1.4.1.9.9.48.1.1.1.6.1 )
+
+Devicecpu:
+Devicecpu( 设备名称: R1 | CPU利用率: 30.0 | 记录时间: 2026-05-27 02:08:22 )
+Devicecpu( 设备名称: R1 | CPU利用率: 45.5 | 记录时间: 2026-05-27 02:08:22 )
+Devicecpu( 设备名称: R2 | CPU利用率: 22.0 | 记录时间: 2026-05-27 02:08:22 )

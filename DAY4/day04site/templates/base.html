@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <title>{% block title %}网络设备管理{% endblock title %}</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    {% block head %}{% endblock head %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a href="/" class="float-left"><img src="{% static 'img/logo_long_new.png' %}" height="50" width="auto"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">首页</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">设备管理</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/add_device">添加设备</a></li>
+                <li><a class="dropdown-item" href="/admin/qyt_device/devicedb/">设备列表</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">图表测试</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/admin/">图表</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">上传下载</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/admin/">下载</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="btn btn-outline-secondary btn-sm" href="/accounts/logout">登出</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="btn btn-outline-primary btn-sm" href="/accounts/login">登录</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-4">
+      {% block body %}{% endblock body %}
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

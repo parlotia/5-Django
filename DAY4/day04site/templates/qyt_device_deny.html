@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}权限不足{% endblock title %}
+
+{% block body %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="alert alert-danger mt-4" role="alert">
+      <h4 class="alert-heading">访问被拒绝</h4>
+      <p>{{ errormessage }}</p>
+      <hr>
+      <p class="mb-0">请联系管理员获取权限，或<a href="/accounts/login">重新登录</a>。</p>
+    </div>
+  </div>
+</div>
+{% endblock body %}
